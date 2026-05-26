@@ -317,6 +317,7 @@
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 24px;
+    padding-right: 48px; /* Avoid collision with absolute close button */
   }
   .modalLogo {
     width: 60px;
