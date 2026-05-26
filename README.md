@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manan Sharma | Software Engineer & Full-Stack Developer
 
-## Getting Started
+A premium, interactive, and ultra-refined 3D developer portfolio designed with modern UX principles. Featuring vertical immersive grids, interactive timeline consoles, custom SVG iconography, and dynamic canvas physics. Built with Next.js 16 (App Router), Framer Motion, and React Icons.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   **Interactive Professional Timeline:** A sleek glassmorphic sidebar console mapping professional experience. Employs responsive micro-interactions tracking scroll & read status with active visual node tracking.
+*   **Magnetic Bento Technical Grid:** Responsive skill display layout with parallax magnetic physics. Icons dynamically track client-side mouse-movements and floating animation cycles.
+*   **Immersive Projects Display:** Fluid vertical project showcase containing details on custom platforms like **AuroraSwap** (DeFi Swap), **Project Setu** (Enterprise integration middleware), and **EcoLens OS** (AI object classifier).
+*   **Direct Connect Terminal:** Fully responsive terminal shell simulating system connection diagnostics with deep-linked communications (Email, GitHub, LinkedIn).
+*   **Global Adaptive Ambient Background:** A low-overhead animated radial gradient background mesh that stays behind page segments for high readability and professional style.
+*   **Production Verified:** 100% responsive styling across all devices (Mobile, Tablet, Desktop) and fully compatible with Next.js Turbopack compilation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Technical Arsenal
 
-## Learn More
+*   **Frontend:** React 19, Next.js 16.2.6 (App Router), TypeScript, HTML5, Vanilla CSS Modules
+*   **Animations:** Framer Motion, `@react-three/fiber`, `@react-three/drei`
+*   **Icons & Branding:** React Icons, Lucide Icons, Custom Inline SVG Graphics
+*   **Styling Architecture:** Responsive CSS grids, flexbox layouts, CSS variables, and fluid typography (`clamp`)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+Ensure you have [Node.js (v18+)](https://nodejs.org/) installed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/manan7627/Portfolio_Manan.git
+   cd Portfolio_Manan
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the local development server:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+4. Verify production build compilation:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 🌐 Deployment
+
+The repository is fully optimized for automated hosting on [Vercel](https://vercel.com/):
+
+1. Link your GitHub account to Vercel.
+2. Select the repository `Portfolio_Manan`.
+3. Vercel automatically detects Next.js configuration and provisions static routes and Server-Side Rendering capabilities out of the box.
+4. Auto-deployments trigger instantly on every `git push` to the `main` branch.

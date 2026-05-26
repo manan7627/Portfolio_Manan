@@ -1,0 +1,347 @@
+.section {
+  padding: 160px 24px;
+  background: transparent;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cardWrapper {
+  perspective: 1000px;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(800px circle at top right, var(--project-color), transparent 50%);
+  opacity: 0.05;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--project-color);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 40px rgba(255,255,255,0.02);
+}
+
+.card:hover::before {
+  opacity: 0.15;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.logoContainer {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.projectLogo {
+  width: 100%;
+  height: 100%;
+}
+
+.projectTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.projectSubtitle {
+  font-size: 1.1rem;
+  color: var(--project-color);
+  font-weight: 600;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.techBadge {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.projectDesc {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.caseStudyBtn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--border-highlight);
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover .caseStudyBtn {
+  background: var(--project-color);
+  color: #000;
+  border-color: var(--project-color);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modalContent {
+  background: var(--bg-primary);
+  border: 1px solid var(--project-color);
+  border-radius: 32px;
+  padding: 60px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 80px rgba(0,0,0,0.8), inset 0 0 40px rgba(255,255,255,0.02);
+}
+
+.closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s;
+}
+
+.closeButton:hover {
+  background: var(--accent-pink);
+  transform: scale(1.1) rotate(90deg);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.modalLogo {
+  width: 80px;
+  height: 80px;
+}
+
+.modalTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.modalSubtitle {
+  font-size: 1.25rem;
+  color: var(--project-color);
+  font-weight: 600;
+}
+
+.expandedTechStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 24px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.modalTechBadge {
+  font-size: 1rem;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.modalDesc {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+}
+
+.modalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--project-color);
+  color: #000;
+  border-radius: 40px;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.modalLink:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 40px var(--project-color);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 16px;
+  }
+  .heading {
+    margin-bottom: 40px;
+  }
+  .card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+  .cardHeader {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .logoContainer {
+    width: 48px;
+    height: 48px;
+  }
+  .projectTitle {
+    font-size: 1.5rem;
+  }
+  .projectDesc {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  
+  /* Modal responsive styles */
+  .modalContent {
+    padding: 32px 20px;
+    border-radius: 24px;
+  }
+  .closeButton {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+  .modalHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .modalLogo {
+    width: 60px;
+    height: 60px;
+  }
+  .modalTitle {
+    font-size: 2rem;
+  }
+  .expandedTechStack {
+    padding: 16px;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .modalTechBadge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  .modalDesc {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+  .modalLink {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 14px 24px;
+  }
+}

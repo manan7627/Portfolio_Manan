@@ -1,0 +1,178 @@
+.section {
+  padding: 100px 24px;
+  background: transparent;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.headerArea {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.consoleCard {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4), inset 0 0 40px rgba(255,255,255,0.02);
+}
+
+.roleHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 24px;
+}
+
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 20px 40px rgba(217, 70, 239, 0.2);
+}
+
+.role {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.company {
+  color: var(--accent-blue);
+}
+
+.date {
+  color: var(--text-muted);
+}
+
+.contentLayout {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.timelineSidebar {
+  width: 4px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.timelineLine {
+  position: absolute;
+  inset: 0;
+}
+
+.timelineGlow {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--accent-pink), var(--accent-blue));
+  box-shadow: 0 0 20px var(--accent-pink), 0 0 40px var(--accent-blue);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.bulletsList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bulletItem {
+  position: relative;
+  padding: 20px 0 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.bulletHovered {
+  color: var(--text-primary);
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), transparent);
+  border-radius: 12px;
+}
+
+.bulletNode {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 10px;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 16px;
+  }
+  .consoleCard {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+  .roleHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+  .role {
+    font-size: 1.4rem;
+  }
+  .iconContainer {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+  .meta {
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+  .contentLayout {
+    gap: 16px;
+  }
+  .bulletItem {
+    padding: 12px 0 12px 12px;
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+}
